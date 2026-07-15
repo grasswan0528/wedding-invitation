@@ -1,15 +1,19 @@
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
 }
 
-body {
-    margin: 0;
-    height: 100vh;
-    overflow: hidden;
+body{
+    margin:0;
+    height:100vh;
+    overflow:hidden;
+
     background:
-    radial-gradient(circle at center,
-    #8b1d2c,
-    #26080d);
+    radial-gradient(
+        circle at center,
+        #b08a55 0%,
+        #6b1b25 35%,
+        #21090d 100%
+    );
 
     font-family:
     "Noto Serif TC",
@@ -17,7 +21,28 @@ body {
 }
 
 
-.invite {
+/* 水墨紙張效果 */
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    url("https://www.transparenttextures.com/patterns/paper.png");
+
+    opacity:.25;
+
+}
+
+
+
+/* 主容器 */
+
+.invite{
 
     height:100vh;
 
@@ -30,126 +55,202 @@ body {
 }
 
 
-.envelope {
+
+/* 喜帖 */
+
+.envelope{
 
     width:85%;
+
     max-width:380px;
 
-    padding:50px 25px;
+    padding:55px 25px;
 
     text-align:center;
 
-    color:white;
+    color:#fff5d6;
+
 
     background:
+
     linear-gradient(
-    145deg,
-    #a52a3a,
-    #4d0b13
+        145deg,
+        #a82032,
+        #5c101a
     );
 
 
-    border-radius:15px;
+    border-radius:18px;
+
+
+    border:
+
+    2px solid rgba(224,190,100,.7);
+
 
     box-shadow:
-    0 20px 60px rgba(0,0,0,.5);
+
+    0 30px 80px rgba(0,0,0,.7);
+
+
 
     cursor:pointer;
 
-    transition:
-    1s;
-
-}
-
-
-
-.gold {
-
-    font-size:90px;
-
-    color:#e5c06a;
-
-    text-shadow:
-    0 0 20px #ffd978;
 
     animation:
-    glow 3s infinite;
+
+    float 4s infinite ease-in-out;
+
 
 }
 
 
 
-@keyframes glow {
+@keyframes float{
 
-    0%,100% {
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+
+
+
+/* 囍 */
+
+.gold{
+
+    font-size:95px;
+
+    color:#e7c875;
+
+
+    text-shadow:
+
+    0 0 10px #fff0a8,
+
+    0 0 30px #d9a441;
+
+
+    animation:
+
+    shine 3s infinite;
+
+}
+
+
+
+@keyframes shine{
+
+
+    0%{
+
         filter:brightness(1);
+
     }
 
-    50% {
-        filter:brightness(1.5);
+
+    50%{
+
+        filter:brightness(1.6);
+
+    }
+
+
+    100%{
+
+        filter:brightness(1);
+
     }
 
 }
 
 
 
-h1 {
+
+h1{
 
     font-size:32px;
 
-    line-height:1.6;
+    line-height:1.7;
 
 }
 
 
 
-h1 span {
+h1 span{
 
-    color:#f2d27a;
-
-}
-
-
-
-p {
-
-    letter-spacing:3px;
+    color:#f4d77d;
 
 }
 
 
 
-.content {
+p{
 
-    position:absolute;
+    letter-spacing:4px;
 
-    text-align:center;
+}
 
-    color:white;
+
+
+
+/* 開啟後 */
+
+.open .envelope{
+
+
+    transform:
+
+    scale(.2)
+
+    rotateY(90deg);
+
 
     opacity:0;
 
+
+}
+
+
+
+.content{
+
+
+    position:absolute;
+
+
+    text-align:center;
+
+
+    color:white;
+
+
+    opacity:0;
+
+
     transition:
+
     1.5s;
 
 }
 
 
 
-.open .envelope {
+.open .content{
 
-    transform:
-    scale(.2)
-    rotateX(90deg);
-
-    opacity:0;
-
-}
-
-
-
-.open .content {
 
     opacity:1;
+
 
 }
