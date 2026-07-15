@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background:
+    radial-gradient(circle at center,
+    #8b1d2c,
+    #26080d);
+
+    font-family:
+    "Noto Serif TC",
+    serif;
+}
+
+
+.invite {
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+.envelope {
+
+    width:85%;
+    max-width:380px;
+
+    padding:50px 25px;
+
+    text-align:center;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    145deg,
+    #a52a3a,
+    #4d0b13
+    );
+
+
+    border-radius:15px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.5);
+
+    cursor:pointer;
+
+    transition:
+    1s;
+
+}
+
+
+
+.gold {
+
+    font-size:90px;
+
+    color:#e5c06a;
+
+    text-shadow:
+    0 0 20px #ffd978;
+
+    animation:
+    glow 3s infinite;
+
+}
+
+
+
+@keyframes glow {
+
+    0%,100% {
+        filter:brightness(1);
+    }
+
+    50% {
+        filter:brightness(1.5);
+    }
+
+}
+
+
+
+h1 {
+
+    font-size:32px;
+
+    line-height:1.6;
+
+}
+
+
+
+h1 span {
+
+    color:#f2d27a;
+
+}
+
+
+
+p {
+
+    letter-spacing:3px;
+
+}
+
+
+
+.content {
+
+    position:absolute;
+
+    text-align:center;
+
+    color:white;
+
+    opacity:0;
+
+    transition:
+    1.5s;
+
+}
+
+
+
+.open .envelope {
+
+    transform:
+    scale(.2)
+    rotateX(90deg);
+
+    opacity:0;
+
+}
+
+
+
+.open .content {
+
+    opacity:1;
+
+}
