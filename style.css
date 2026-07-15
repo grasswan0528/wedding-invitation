@@ -254,3 +254,31 @@ p{
 
 
 }
+.photo{
+
+width:80vw;
+
+max-width:380px;
+
+border-radius:12px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.6);
+
+margin-bottom:20px;
+
+transform:
+scale(.8);
+
+transition:
+1.5s;
+
+}
+
+
+.open .photo{
+
+transform:
+scale(1);
+
+}
